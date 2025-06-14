@@ -7,10 +7,6 @@ import (
 	"strconv"
 )
 
-const (
-	userID = "userId"
-)
-
 // getAllListResponse represents response for get all lists
 // @Description Response object containing array of todo lists
 type getAllListResponse struct {

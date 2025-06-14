@@ -161,7 +161,7 @@ func (r *repo) Update(ctx context.Context, userId int, listId int, input *model.
 }
 
 func (r *repo) Delete(ctx context.Context, userId int, listId int) error {
-	query := fmt.Sprintf("DELETE FROM %s tl USING %s ul WHERE tl.id = ul.list_id AND ul.user_id=$1 AND ul.list_id=$2",
+	query := fmt.Sprintf("DELETE FROM%s tl USING %s ul WHERE tl.id = ul.list_id AND ul.user_id=$1 AND ul.list_id=$2",
 		todoListsTable, usersListTable)
 
 	_, err := r.db.Exec(ctx, query, userId, listId)
